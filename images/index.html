@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Food</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.6.2.js"
+        integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="images/thaipepperybistro.png" class="logonav">
+            </a>
+            <div class="nav-profile">
+                <p class="nav-profile-name">Shopping</p>
+                <div onclick="openCart()" style="cursor:pointer;" class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                        0
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </nav>
+    <div class="container">
+        <div class="sideber">
+            <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sideber-search"
+                placeholder="Search Something...">
+            <a onclick="searchproduct('all')" class="sidebar-items">All Product</a>
+            <a onclick="searchproduct('appetizes')" class="sidebar-items">Appetizes</a>
+            <a onclick="searchproduct('salad')" class="sidebar-items">Salad</a>
+            <a onclick="searchproduct('fried')" class="sidebar-items">Fried</a>
+
+        </div>
+        <div id="productlist" class="product">
+
+
+
+
+        </div>
+    </div>
+    <div id="modalDesc" class="modal" style="display:none ;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>Details</h2>
+            <br>
+            <div class="modaldesc-content">
+                <img id="mdd-img" class="modaldesc-img" src="images/Raw Fresh Prawns in Aromatized Fish Sauce.jpg"
+                    alt="">
+                <div class="madaldesc-detail">
+                    <p id="mdd-name" style="font-size: 1.9vw;">Peoduct Name</p>
+                    <p id="mdd-price" style="font-size: 1.8vw;">500 THB</p>
+                    <br>
+                    <p id="mdd-desc" style="color: #adadad"> adipisicing elit. Officia rem eum a maxime quae error,
+                        eaque veritatis!
+                    </p>
+                    <br>
+                    <div class="btn-control">
+                        <Button onclick="closeModal()" class="btn">
+                            Close
+                        </Button>
+                        <Button onclick="addtocart()" class="btn btn-buy">
+                            Add to Cart
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalCart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>My Cart</h2>
+            <br>
+            <div id="mycart" class="cartlist">
+
+                
+
+
+            </div>
+
+        </div>
+        <div class="btn-control">
+            <button onclick="closeModal()" class="btn">
+                Cancel
+            </button>
+            <button class="btn btn-buy">
+                Buy
+            </button>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
